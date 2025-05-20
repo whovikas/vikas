@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mariyam's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #f3f1ee;
+      color: #2c2a29;
+      line-height: 1.8;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    .bg-light {
+      background-color: #f3f1ee;
+    }
+
+    .text-dark {
+      color: #2c2a29;
+    }
+
+    .header {
+      background-color: #4e2f2f;
+      color: #fdfdfd;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-style: italic;
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 48px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-alt {
+      background-color: #ded7cf;
+      transition: background-color 0.5s;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #3e2b2b;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      margin: 0 auto 24px;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.08);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding-left: 0;
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .footer {
+      background-color: #4e2f2f;
+      color: #fdfdfd;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    a {
+      color: #3e2b2b;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-light text-dark">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>Vikas's Portfolio</h1>
+      <p class="subtitle">A Tech Enthusiast with Big Dreams</p>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="section fade-up">
+      <img src="C:\Users\Mariyam\OneDrive\Gambar.jpg" alt="Vikas's Profile Photo" class="profile-pic" />
+      <h2>Hi, I'm Vikas!</h2>
+      <p>Welcome to my digital space 🌍</p>
+    </section>
+
+    <!-- About Me -->
+    <section class="section section-alt fade-up">
+      <h3>About Me</h3>
+      <p><strong>Name:</strong> Vikas</p>
+      <p><strong>Location:</strong> India</p>
+      <p><strong>Education:</strong> B.Tech in Electronics and Computer Science Engineering</p>
+      <p><strong>Languages:</strong> English, Hindi, Marathi</p>
+    </section>
+
+    <!-- Achievements -->
+    <section class="section fade-up">
+      <h3>Achievements</h3>
+      <ul>
+        <li>Built a Drone using a DIY kit (under ₹3000)</li>
+        <li>English Olympiad Winner</li>
+        <li>Certified in Generative AI Projects</li>
+      </ul>
+    </section>
+
+    <!-- Future Goals -->
+    <section class="section section-alt fade-up">
+      <h3>Future Goals</h3>
+      <p>I aspire to build intelligent embedded systems that improve daily lives. I'm also passionate about clean energy tech and making tech more inclusive and accessible.</p>
+    </section>
+
+    <!-- Personal Side -->
+    <section class="section fade-up">
+      <h3>My Personal Side</h3>
+      <p><strong>Hobbies:</strong> Playing cricket, Reading Historical Fiction, Trekking</p>
+      <p><strong>Role Models:</strong> Marie Curie (for resilience), Elon Musk (for innovation)</p>
+      <p><strong>Favourite Books:</strong> Sapiens, Atomic Habits</p>
+      <p><strong>Websites I Love:</strong> <a href="https://dev.to" target="_blank">dev.to</a>, <a href="https://github.com" target="_blank">GitHub</a>, <a href="https://www.producthunt.com" target="_blank">Product Hunt</a></p>
+      <p><strong>Startups I Admire:</strong> Notion, Figma, Zerodha</p>
+      <p><strong>Volunteering:</strong> Took part in various NSS activities</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Vikas's Portfolio | Made with 💻 and ☕</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll(".fade-up");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
